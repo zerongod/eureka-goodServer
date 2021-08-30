@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.eurekaClient.mapper.GoodMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.eurekaClient.entity.Good">
+        <result column="goodID" jdbcType="INTEGER" property="goodID" />
+        <result column="goodName" jdbcType="VARCHAR" property="username" />
+        <result column="goodType" jdbcType="VARCHAR" property="password" />
+        <result column="price" jdbcType="DOUBLE" property="price" />
+        <result column="inventory" jdbcType="INTEGER" property="inventory" />
+        <result column="designStyle" jdbcType="VARCHAR" property="designStyle" />
+    </resultMap>
+    <!--查询用户信息-->
+    <select id="getGoodInfo" resultType="com.example.eurekaClient.entity.Good">
+        select * from hongshen_weaving where goodID = #{goodID}
+    </select>
+
+    <!--返回所有用户信息-->
+    <select id="selectAll"  resultType="com.example.eurekaClient.entity.Good">
+        select * from hongshen_weaving
+    </select>
+
+</mapper>
